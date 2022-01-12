@@ -1,1 +1,2 @@
-Hi imade chnage in my file and now i will chek by push that my changes get saved
+Hi i made chnage in my file and now i will chek by push that my changes get saved
+i changed file on my git hub acount and im now see by pulling the data in my machine 
