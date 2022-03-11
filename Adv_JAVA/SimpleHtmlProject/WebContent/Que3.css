@@ -1,0 +1,54 @@
+@charset "ISO-8859-1";
+.alpha
+{
+    margin-top: 100;
+    color: white;
+    background:black;
+    width: 500;
+    border-radius: 25px;
+    border-width: 5px;
+    border-color: coral;
+    border-style: outset;
+    font-style: italic;
+    font: bold;
+    font: italic;   
+    text-underline-position: below;    
+   
+}
+.beta
+{
+    background-color: black;
+    box-shadow: 25px;
+    border-radius: 25px;
+    border-color: coral;
+    border-style: outset;
+    width: 500;  
+    height: 250;
+    align-items: center;
+    color: white;
+
+   
+    
+}
+.gama
+{
+   
+    margin-top: 50;
+    margin: 20; 
+    border-radius: 50px;
+    border: 5px outset;
+    border-color: rgb(177, 127, 223);
+    background-image: url('114819020-close-up-view-of-brand-new-indian-10-50-100-200-500-and-2000-rupees-banknotes-.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%; 
+}
+
+.div
+{
+    margin-top: 10%;
+    margin: 5%;
+    align-items: center;
+    width: 50%;
+}
+

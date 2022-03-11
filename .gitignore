@@ -1,0 +1,8 @@
+.settings
+/build/**
+/WebContent/META-INF
+/WebContent/WEB-INF
+.classpath
+.project
+.metadata
+.recommenders
