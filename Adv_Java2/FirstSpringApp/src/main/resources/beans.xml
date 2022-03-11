@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="study.beans.MessageBeans" id="first" scope="prototype">
+    
+    <property name="message" value="Hello from spring"></property>
+    <property name="sender" value="Dhanraj"></property>
+    <property name="contactDetails" ref="contact"></property>
+    
+    </bean>
+    
+    <bean class="study.beans.MessageBeans" id="singleton">
+    <property name="message" value="Welcome in singleton "></property>
+    <property name="sender" value="Dhanraj"></property>
+    <property name="contactDetails" ref="contact"></property>
+    </bean>
+      
+    <bean class="study.beans.ContactDetaills" id="contact">
+    <property name="phoneNumber" value="9130721422"></property>
+    <property name="email" value="Dhanraj@gmail"></property>
+    <property name="adressbean" ref="Address"></property>
+    </bean>
+    
+    <bean class="study.beans.AddressBean" id="Address">
+    <property name="area" value="near highSchool"></property>
+    <property name="city" value="KAranjkhop"></property>
+    <property name="state" value="Maharashtra"></property>
+    <property name="country" value="India"></property>
+    <property name="pin" value="415525"></property>
+    </bean>
+
+</beans>

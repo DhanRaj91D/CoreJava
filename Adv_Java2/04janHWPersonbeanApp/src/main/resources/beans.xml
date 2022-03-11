@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="study.beans.PersonBean" id="person1" scope="prototype">
+    <property name="name" value="Dhanraj"></property>
+    <property name="adress" ref="Address1"></property>
+    <property name="pcards" ref="cards1"></property>
+    </bean>
+    
+    <bean class="study.beans.AddressBean" id="Address1">
+    <property name="area" value="akurdi"></property>
+    <property name="city" value="pimprichincwad"></property>
+    <property name="state" value="Maharshtra"></property>
+    <property name="pin" value="411008"></property>
+    </bean>
+    
+     <bean class="study.beans.CardsBean" id="cards1" scope="prototype">
+    <property name="pan" value="111111111"></property>
+    <property name="adhar" value="2222222"></property>
+    <property name="voterID" value="33333333333"></property>
+    <property name="passport" value="44444444"></property>
+    </bean>
+    
+
+</beans>

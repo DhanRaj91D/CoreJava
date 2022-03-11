@@ -1,0 +1,139 @@
+
+<html>
+
+<head>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script type="text/javascript">
+       $(document).ready(()=>{
+ 
+ $('#submit').click(()=>{
+ 
+     var id = $('#id').val()
+     var name = $('#bookName').val()
+     var cost = $('#cost').val()
+     
+    
+    
+     $.ajax(
+    		 {beforeSend:function(jqXHR,settings){
+    			 
+    			 jqXHR.setRequestHeader('Content-Type','application/json');
+    		 },
+    		 
+             
+                url:`/book/add`,
+                type:'POST',		
+                data:JSON.stringify({"id":id, "bookName":name, "cost":cost}),
+                success:function(data)
+                {
+                    $('#d1').html(`<p>${data}</p>`)
+                }
+             }//parameter
+     
+     )//end of ajax call
+     
+     
+ })// end of submit
+ 
+ $('#get').click(() => {
+
+     $.ajax(
+
+         {
+             url: `/book/getAll`,
+             type: 'GET',
+             success: function (responseData) {
+                 var arr = responseData
+
+                 $('#d1').html('')
+                 var tab = $("<table border='1'></table>")
+                 for (var i = 0; i < arr.length; i++) {
+                     tab.append(`<tr><td>${arr[i].id}</td><td>${arr[i].bookName}</td><td>${arr[i].cost}</tr>`)
+                 }
+                 $('#d1').append(tab)
+
+             }//end of sucsess
+
+         }//end of parameter
+
+     )//end of ajax
+
+ })// end of get table
+ 
+ 
+ $('#drop').click(() => {
+
+     $.ajax(
+
+         {
+
+             url: `/book/getAll`,
+             type: 'GET',
+             success: function (responseData) {
+                 var arr = responseData
+
+                 $('#d2').html('')
+                 var tab = $("<select ></select>")
+                 for (var i = 0; i < arr.length; i++) {
+                     tab.append(`<option value="{$(arr[i].bookName)}">${(arr[i].bookName)}</option>`)
+                 }
+                 $('#d2').append(tab)
+
+             }//end of sucsess
+
+         }//end of parameter
+
+
+     )
+
+ })// end of dropdown
+ 
+$('#reset').click(()=>{
+	 
+	 $('#d1').html('')
+	 
+ })
+  $('#reset1').click(()=>{
+	 
+	 $('#d2').html('')
+	 
+ })
+ $('#reset2').click(()=>{
+	 
+	 $('#id').val('')
+    $('#bookName').val('')
+     $('#cost').val('')
+	 
+ })
+ 
+})
+
+    </script>
+</head>
+
+<body>
+<div>
+	ID : <input type="text" name="id" id="id"><br><br> 
+	Book Name : <input type="text" name="bookName" id="bookName"><br><br>
+	cost : <input type="number" name="cost" id="cost"><br><br>
+	<button id="submit">submit</button>
+	<button id="reset2">reset</button>
+	<div id="d1"></div>
+</div><br><br>
+
+		<div>
+			<button id="get">Get</button>
+			<button id="reset">reset</button>
+			<div id="d1"></div>
+		</div><br><br>
+	
+		<div>
+			<button id="drop">Show drop down</button>
+			<button id="reset1">reset</button>
+			<div id="d2"></div>
+		</div>
+</body>
+
+</html>

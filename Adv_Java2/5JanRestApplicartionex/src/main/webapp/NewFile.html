@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+
+    <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+    <script>
+        $(document).ready(()=>{
+        $('#submit').click(()=>{
+ 
+
+
+ var num1 = $('#num1').val()
+ var num2 = $('#num2').val()
+ var op = $('#op').val()
+ 
+
+
+ $.ajax(
+         {beforeSend:function(jqXHR,settings){
+             
+             jqXHR.setRequestHeader('Content-Type','application/json');
+         },
+         
+         
+            url:`/maths/add`,
+            type:'POST',		
+            data:JSON.stringify({"num1":num1, "num2":num2, "op":op}),
+            success:function(data)
+            {
+                $('#d1').html(`<p>${data}</p>`)
+            }
+         }//parameter
+ 
+ )//end of ajax call
+ 
+ 
+})// end of submit
+})
+        
+
+    </script>
+</head>
+<body>
+    num 1: <input type="number"  id="num1">
+    num 2: <input type="number"  id="num2">
+    operation: <select  id="op">
+        <option value="add">Addition</option>
+        <option value="sub">Subtraction</option>
+        <option value="mul">multiplication</option>
+        <option value="div">Division</option>
+    </select>
+    <input type="button" id="submit" value="submit"/>
+
+    <div id="d1"></div>
+</body>
+</html>
