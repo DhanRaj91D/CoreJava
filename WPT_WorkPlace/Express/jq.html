@@ -1,0 +1,46 @@
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script type="text/javascript">
+       $(document).ready(()=>{
+ 
+ $('#submit').click(()=>{
+ 
+     var v1 = $('#module').val()
+     var v2 = $('#link').val()
+     var v3 = $('#date').val()
+     
+     var obj = {"module":v1, "feedback_link":v2, "expected_date":v3}
+     var url = `/api/feedback/post/${obj}`
+     $.ajax(
+             {
+                url:url,
+                type:'POST',
+                
+                success:function(respData)
+                {
+                    $('#d1').html(`<p>${respData}</p>`)
+                }
+             }//parameter
+     
+     )//end of ajax call
+     
+     
+ })
+})
+
+    </script>
+</head>
+
+<body>
+    module <input type="text" name="module" id="module"><br>
+    feedback_link <input type="text" name="link" id="link"><br>
+    expected_date  <input type="date" name="date" id="date"><br>
+<button id="submit">submit</button>
+<div id="d1"></div>
+
+</body>
+
+</html>

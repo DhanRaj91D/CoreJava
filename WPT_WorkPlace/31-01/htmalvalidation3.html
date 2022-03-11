@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function validate()
+        {
+            console.log("here")
+            var name = document.forms["form1"]["studName"].value
+/* 
+           var formobj =document.forms.form1
+           var name = formobj.studName.value */
+
+
+            var age = document.forms["form1"]["studAge"].value
+            console.log(name,age)
+            if(age<10){
+                alert("incorrect age")
+                return false;
+            } else
+            {  document.forms["form1"].action="one.html"
+                return true;
+            } 
+        }
+    </script>
+
+</head>
+<body>
+    <body>
+        <form name="form1" onsubmit="return validate()">
+            Student Name :<input type="text" name="studName" />
+            <br>
+            Student Age :<input type="text" name="studAge" />
+            <br>
+            <input type="submit"  value="Action1"> </input><br>
+            
+
+        </form>
+    </body>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <title>Registration form</title>
+
+    <style>
+        fieldset {
+            background: rgb(255, 244, 142);
+            width: 500;
+            border-radius: 50px;
+            border-width: 15px;
+            border-color: coral;
+            border-style: outset;
+        }
+
+        label {
+            font-size: larger;
+            font-style: oblique;
+
+            color: rgb(0, 0, 0);
+
+        }
+
+        input {
+            background-color: rgb(69, 211, 180);
+            box-shadow: 15px;
+            border-radius: 15px;
+
+        }
+
+        textarea {
+            background-color: rgb(69, 211, 180);
+            box-shadow: 15px;
+            border-radius: 15px;
+        }
+
+        button {
+            color: beige;
+            background-color: rgb(23, 8, 161);
+            box-shadow: 15px;
+            border-radius: 15px;
+        }
+
+        .Gender {
+            background-color: rgb(84, 240, 84);
+            border-radius: 25px;
+            border: 5px outset;
+            border-color: rgb(177, 127, 223);
+            width: 300;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <legend>
+                <h3>PERSONAL INFORMATION</h3>
+            </legend>
+            <form action="C:\Users\Dhanraj\OneDrive\Desktop\WPT_Workstace\HTML\Subbmit.html">
+                <pre>
+<label><b>First Name:</b></label>   <input type="text">
+
+<label><b>Last Name:</b></label>    <input type="text">
+
+<label><b>Address:</b></label>
+              <textarea name="Address"  cols="25" rows="5"></textarea>
+
+<label><b>Email:</b></label>        <input type="email">
+
+<label><b>Dob:</b></label>          <input type="date">
+
+<label><b>Phone:</b></label>        <input type="number">
+
+<div class="Gender">
+<label><b>Gender:</b></label> 
+            <label><b> Male</b></label><input type="radio" name="Gender" value="Male"/>
+            <label><b> Female</b></label><input type="radio" name="Gender" value="Female"/>
+
+        </div>
+                                        <button type="submit">Save</button>
+         </pre>
+            </form>
+        </fieldset>
+    </div>
+</body>
+
+
+</html>

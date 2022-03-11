@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .errormsg {
+            visibility: hidden;
+        }
+    </style>
+    <title>Document</title>
+
+    <script>
+
+        function validate() {
+
+            var name = document.forms["form1"]["name"].value
+            var age = document.forms["form1"]["age"].value
+
+
+
+            if (name.trim() == "") {
+                document.getElementsByClassName("errormsg")[0].style.visibility = "visible";
+
+            }
+
+            else{
+                document.getElementsByClassName("errormsg")[0].style.visibility = "hidden";
+            }
+
+            if(age<9)
+            {
+                document.getElementsByClassName("errormsg")[1].style.visibility="visible";
+                return false;
+
+            }
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <form name="form1" onsubmit="return validate()">
+
+        name : <input type="text" name="name"><br>
+        <p class="errormsg"> name shoud be present </p><br>
+        age : <input type="number" name="age"><br>
+        <p class="errormsg">age shoud be more than 9</p>
+        <br>
+        <input type="submit" value="submit">
+
+
+
+    </form>
+
+</body>
+
+</html>

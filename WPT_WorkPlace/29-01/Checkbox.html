@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+
+        function message()
+        {
+            document.getElementById('para').innerHTML="welcome "+ document.getElementById('name').value;
+        }
+
+        function enableIf(){
+
+            if(document.getElementById("box").checked==true)
+            document.getElementById("name").readOnly=false;
+
+            else
+            document.getElementById("name").readOnly=true;
+        }
+
+    </script>
+</head>
+<body>
+
+    <form>
+        <label>other Details: </label>
+        <input type="checkbox" name="box" id="box" onchange="enableIf()"/>
+        <label>Enter your name</label>
+        <input type="text" name="name" id="name" readonly oninput="message()"/>
+    </form>
+    <div id="para">
+        welcome
+    </div>  
+</body>
+</html>

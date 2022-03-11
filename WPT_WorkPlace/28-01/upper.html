@@ -1,0 +1,32 @@
+<!-- 6. Accept a string in a textfield and show it in a <p> tag below in uppercase on click of the button -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+function toupper(){
+
+   var val= document.getElementById('name').value
+     format= val.toUpperCase()
+    document.getElementById("para").innerText=format
+
+
+}
+    </script>
+</head>
+<body>
+    
+    <form>
+
+        <label> Enter String</label>
+        <input type="text" name="name" id="name"/>
+        <input type="button" value="submit" onclick="toupper()">
+
+    </form>
+    <p id="para">
+
+
+    </p>
+</body>
+</html>

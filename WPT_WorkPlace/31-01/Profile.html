@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .labels {
+            font-size: 11px
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $('#submit').click(() => {
+
+                var fname = $('#fname').val()
+                var mname = $('#mname').val()
+                var lname = $('#lname').val();
+                var dob = $('#dob').val();
+                var gender = $('#gender').val();
+                var email = $('#email').val();
+                var mobno = $('#mobno').val();
+                var education = $('#education').val();
+                var image = $('#image').val();
+                var streetAddress = $('#streetAddress').val();
+                var city = $('#city').val();
+                var state = $('#state').val();
+                var pinCode = $('#pinCode').val();
+
+
+                $.ajax(
+                    {
+                        beforeSend: function (jqXHR, settings) {
+
+                            jqXHR.setRequestHeader('Content-Type', 'application/json');
+                        },
+
+
+                        url: `/api/profile/add`,
+                        type: 'GET',
+                        data: JSON.stringify({ "fname": fname, "mname": mname, "lname": lname, "dob": dob, "gender": gender, "email": email, "mobno": mobno, "education": education, "image": image, "streetAddress": streetAddress, "city": city, "state": state, "pinCode": pinCode }),
+                        success: function (data) {
+                            $('#d1').html(`<p>${data}</p>`)
+                        }
+                    }//parameter
+
+                )//end of ajax call
+
+                $('#fname').val('');
+                $('#mname').val('');
+                $('#lname').val('');
+                $('#dob').val('');
+                $('#gender').val('');
+                $('#email').val('');
+                $('#mobno').val('');
+                $('#education').val('');
+                $('#image').val('');
+                $('#streetAddress').val('');
+                $('#city').val('');
+                $('#state').val('');
+                $('#pinCode').val('');
+
+            })// end of submit
+        })
+
+
+    </script>
+    <title>Profile</title>
+</head>
+
+<body>
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
+                        width="150px"
+                        src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
+                        class="font-weight-bold"><span>Take name from Js</span></span><span
+                        class="text-black-50"><span>Take email from js</span></span><span> </span></div>
+                <div>
+                    <label for="formFileSm" class="form-label">Upload Profile Photo</label>
+                    <input class="form-control form-control-sm" id="image" type="file" />
+                </div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profile Settings</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">Name</label><input type="text" id="fname"
+                                class="form-control" placeholder="first name" value=""></div>
+                        <div class="col-md-6"><label class="labels">Middlename</label><input type="text" id="mname"
+                                class="form-control" placeholder="middle name" value=""></div>
+                        <div class="col-md-6"><label class="labels">Surname</label><input type="text" id="lname"
+                                class="form-control" value="" placeholder="surname"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Birth Date</label><input type="date" id="dob"
+                                class="form-control" placeholder="enter date of birth" value=""></div>
+                        <div class="col-md-12"><label class="labels">Gender</label><input type="text" id="gender"
+                                class="form-control" placeholder="enter gender" value=""></div>
+
+                        <div class="col-md-12"><label class="labels">Education</label><input type="text" id="education"
+                                class="form-control" placeholder="education" value=""></div>
+                    </div>
+
+                    <div class="mt-5 text-center"><button id="submit" class="btn btn-primary profile-button"
+                            type="button">Save Profile</button></div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center experience"><span>Contact
+                            Details</span></div><br>
+                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" id="mobno"
+                            class="form-control" placeholder="enter phone number" value=""></div>
+                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" id="email"
+                            class="form-control" placeholder="enter email id" value=""></div>
+                    <div class="col-md-12"><label class="labels">Street Address</label><input type="text"
+                            id="streetAddress" class="form-control" placeholder="enter Street address" value=""></div>
+                    <div class="col-md-12"><label class="labels">PinCode</label><input type="text" id="pinCode"
+                            class="form-control" placeholder="enter Pincode" value=""></div>
+                    <div class="col-md-12"><label class="labels">City</label><input type="text" id="city"
+                            class="form-control" placeholder="enter city" value=""></div>
+                    <div class="col-md-12"><label class="labels">State</label><input type="text" id="state"
+                            class="form-control" placeholder="enter State" value=""></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div id="d1"></div>
+
+</body>
+
+</html>

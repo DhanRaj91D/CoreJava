@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <script>
+
+        $(document).ready(function(){
+
+            
+            $('#b1').click(function(){
+                $('#p1').html("");
+                let s=$('#t1').val();
+                $('#p1').append(s.toUpperCase())
+
+            })
+
+        })
+
+    </script>
+</head>
+<body>
+    Enter the nam e: <input type="text" name="" id="t1">
+    <div id="p1"></div>
+    <input type="button" value="click" id="b1">
+</body>
+</html>

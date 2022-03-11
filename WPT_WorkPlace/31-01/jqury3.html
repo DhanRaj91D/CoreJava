@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .descendants * { 
+          display: block;
+          border: 2px solid lightgrey;
+          color: lightgrey;
+          padding: 5px;
+          margin: 15px;
+        }
+        </style>
+    <script src="../jquery-3.6.0.js"></script>
+    <title>Document</title>
+
+    <script>
+
+        $(document).ready(function(){
+          //  $('div').find("span").css({"color": "red", "border": "2px solid red"})
+            $("div").find('p').css({"color": "red", "border": "2px solid red"});
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="descendants" style="width:500px;">div (current element)
+        <p>p (child)
+            <span>
+                span 1
+                <span> 
+                    span 2
+
+                    <span>
+                        span3
+
+                    </span>
+                </span>
+            </span>
+        </p>
+        <p>p (child)
+            <span>span (grandchild)</span>
+        </p>
+    </div>
+
+</body>
+
+</html>

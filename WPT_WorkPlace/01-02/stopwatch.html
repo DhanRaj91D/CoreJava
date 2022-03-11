@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+<script>
+    var timerid=0
+    function start(){
+        var x=0
+        timerid = setInterval(()=>{
+            x=x+1
+            document.getElementById("timervalue").innerHTML=x
+
+        },1000)
+    }
+
+    function stop()
+    {
+        clearInterval(timerid)
+    }
+</script>
+
+</head>
+<body>
+ 
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+    <pre>
+
+
+        Timer: 
+
+
+    </pre>
+<span id="timervalue"></span>
+    
+</body>
+</html>

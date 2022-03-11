@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+
+    <script>
+
+function do1(){
+
+    var name= document.forms["form1"]["studentname"].value
+    var age = document.forms["form1"]["age"].value
+
+    console.log(name,age)
+
+    if(age<9)
+    {
+        alert("inncorrect age")
+
+    }
+
+    else
+    {
+        document.forms["form1"].action="one.html"
+        document.forms["form1"].submit()
+    }
+
+}
+
+    </script>
+
+</head>
+<body>
+    
+    <form name="form1">
+        student name: <input type="text" name="studentname" id="studentname">
+        student age: <input type="text" name="age" id="age">
+        <input type="button" onclick="do1()" value="do1">
+     
+    </form>
+
+</body>
+</html>

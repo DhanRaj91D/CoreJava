@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <script src="../jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(() => {
+            var timerid = 0;
+            $('#start').click(() => {
+                var x = 0;
+                timerid = setInterval(() => {
+                    x = x + 1
+                    $('#timerval').val()=x;
+                }, 1000)
+            })
+
+            $('#stop').click(() => {
+
+                clearInterval(timerid)
+
+            })
+
+        })
+
+
+    </script>
+</head>
+
+<body>
+
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+    <pre>
+
+        <span id="timerval">
+
+
+            Timer:
+
+        </span>
+
+       
+
+
+    </pre>
+
+</body>
+
+</html>

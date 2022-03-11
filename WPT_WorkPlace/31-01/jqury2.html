@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script src="../jquery-3.6.0.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+
+            for(let i=0;i<10;i++)
+            $("#s1").append(new Option(i,i))
+
+            $('#b1').click(function(){
+                $('#d1').html("");
+                let v=$("#s1").val();
+
+                for(let j=0;j<v;j++)
+                {
+                    $('#d1').append('<p>hello</>');
+                }
+
+            })
+
+
+
+        })
+
+    </script>
+</head>
+<body>
+
+    <select id="s1"></select><br>
+    <div id="d1"></div><br>
+    <button id="b1">Click</button>
+    
+</body>
+</html>

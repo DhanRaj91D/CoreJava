@@ -1,0 +1,40 @@
+<!-- 7. Write a DOM validation code such that if fname and lname text fields are empty 
+and ok button is clicked then show alert else submit the form  and go to another html -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function validate()
+        {
+            var fname= document.getElementById("fname").value;
+            var lname= document.getElementById("lname").value;
+
+            if(fname=="" || lname=="")
+            alert("please enter name")
+
+            else
+            {
+                document.getElementById("form").submit()
+
+            }
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <form id="form" action="upper.html">
+    
+    <label>First name</label>
+    <input type="text" name="fname" id="fname"/>
+    <label>Last name</label>
+    <input type="text" name="lname" id="lname">
+    <input type="button" value="ok" onclick="validate()">
+
+</form>
+</body>
+</html>

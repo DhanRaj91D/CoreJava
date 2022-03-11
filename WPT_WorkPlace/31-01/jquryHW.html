@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .p
+        {
+           display: none;
+        }
+    </style>
+    <title>Document</title>
+<script src="../jquery-3.6.0.js"></script>
+
+<script>
+    $(document).ready(()=>{
+
+        $('#box').click(()=>{
+            
+           $('.p').css("display","block")
+        })
+
+    })
+
+
+</script>
+
+
+
+</head>
+<body>
+    <p class="p"> abcdefghijklmnopqrstuvwxyz</p>
+    <input type="checkbox" name="box" id="box">
+
+</body>
+</html>

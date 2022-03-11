@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+       function onload_date(){
+           var d= new Date()
+           var display= d.getDate()+"-"+d.getMonth()+1+"-"+d.getFullYear()
+           document.getElementById('date').innerHTML=`date:${display}`
+       }
+    </script>
+    <style>
+        .navbar
+            {
+                overflow: auto;
+                background-color: black;
+            }
+            .menu{
+
+                float: left;
+                color:bisque;
+                font-size: 20px;
+                padding: 14px 16px;
+
+            }
+            .menuitem
+            {
+                float: none;
+                position: absolute;
+                display: none;
+                
+            }
+            .menuitem a
+            {
+                color:black;
+                float: none;
+                padding: 12px 15px;
+                text-decoration: none;
+                display: block;
+                text-align: center;
+
+            }
+            .menuitem::before
+            {
+                content: "\a";
+                white-space: pre;
+            }
+            .navbar .menu:hover .menuetitle
+            {
+                background-color: coral;
+            }
+            .navbar .menu .menuitem a:hover
+            {
+                background-color: cornflowerblue;
+            }
+            .navbar .menu:hover .menuitem 
+            {
+                display: block;
+            } 
+            .frame
+            {
+              width: 100%;
+              height: 1000px;
+            }
+            .date
+            {
+                float: right;
+                padding: auto;
+                margin-top: 10px;
+                margin-right: 20px;
+                border: 2pt solid yellow;
+            }
+            
+    </style>
+</head>
+<body onload="onload_date()">
+    <div class="navbar">
+        <div class="menu">
+            <span class="menuetitle">Home</span>
+            <div class="menuitem">
+                <a href="cssboxex.html" target="below">item1</a>
+                <a href="cssboxex.html" target="below">item2</a>
+                <a href="cssboxex.html" target="below">item3</a>
+            </div>
+        </div>  
+        <div class="menu">
+            <span class="menuetitle">Content</span>
+            <div class="menuitem">
+                <a href="#" target="below">item1</a>
+                <a href="#" target="below">item2</a>
+                <a href="#" target="below">item3</a>
+            </div>
+        </div>   
+        <div class="menu">
+            <span class="menuetitle">Products</span>
+            <div class="menuitem">
+                <a href="#" target="below">item1</a>
+                <a href="#" target="below">item2</a>
+                <a href="#" target="below">item3</a>
+            </div>
+        </div> 
+
+        <div class="menu">
+            <span class="menuetitle">About Us</span>
+            <div class="menuitem">
+                <a href="#" target="below">item1</a>
+                <a href="#" target="below">item2</a>
+                <a href="#" target="below">item3</a>
+            </div>
+        </div> 
+        
+        <div style="color: aliceblue;" class="date" id="date">
+            date:
+        </div>
+    </div>
+
+
+
+    <iframe class="frame" name="below"  frameBorder="0"></iframe>
+</body>
+
+</html>

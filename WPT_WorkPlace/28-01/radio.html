@@ -1,0 +1,44 @@
+<!-- show  a text field and 3 radio buttons -- upper case,lower case title case. when button 
+is clicked show the content of the textfield in a p tag as per the radio button 
+selection -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+function convert(){
+
+    const inp=document.getElementById("inp").value;
+
+       if(document.getElementById("type").checked==true )
+        document.getElementById("conv").innerText=inp.toUpperCase();
+        
+
+        if(document.getElementById("type1").checked==true )
+        document.getElementById("conv").innerText=inp.toLowerCase();
+
+        if(document.getElementById("type2").checked==true )
+        document.getElementById("conv").innerText=inp.charAt(0).toUpperCase()+inp.substring(1,inp.length).toLowerCase()
+
+
+}
+    </script>
+</head>
+<body>
+    <form action="">
+
+        <input type="text" name="inp" id="inp"/>
+        Uppercase:   <input type="radio" name="type" id="type" value="Uppercase">
+        Lowercase:   <input type="radio" name="type" id="type1" value="Lowercase">
+        Camlecase:   <input type="radio" name="type" id="type2" value="Camlecase">
+        <input type="button" value="ok" onclick="convert()">
+
+    </form>
+
+    <div class="conv" id="conv">
+
+    </div>
+</body>
+</html>

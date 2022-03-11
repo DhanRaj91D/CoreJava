@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+
+    <script type="text/javascript" src="./calculate.js">  </script>
+
+    <script>
+        function docalculation() {
+
+            n1 = document.getElementById("num1").value;
+            n2 = document.getElementById("num2").value;
+            op = document.getElementById("op").value;
+
+            result_str = n1 + " " + op + " " + n2 + "=" + calculate(n1, n2, op)
+            document.getElementById("res").innerText = result_str
+
+
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <input type="number" name="num1" id="num1">
+    <input type="number" name="num2" id="num2">
+    <select name="op" id="op" onchange="docalculation()">
+        <option>Select value</option>
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+
+    <div id="res">
+
+    </div>
+</body>
+
+</html>

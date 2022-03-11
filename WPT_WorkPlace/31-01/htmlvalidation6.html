@@ -1,0 +1,52 @@
+<html>
+    <style>
+        .errormessage
+        {
+            visibility: hidden;
+        }
+    </style>
+    <script>
+        function validate()
+        {
+            if(!document.forms["form1"]["studName"].checkValidity())
+            {
+                document.getElementsByClassName("errormessage")[0].style.visibility = 'visible'
+            }
+            else
+            document.getElementsByClassName("errormessage")[0].style.visibility = 'hidden'
+            if(!document.forms["form1"]["studAge"].checkValidity()){
+                alert("incorrect age") 
+                document.getElementsByClassName("errormessage")[1].style.visibility = 'visible'
+                return false;
+            }
+            else
+            {
+                document.getElementsByClassName("errormessage")[1].style.visibility = 'hidden'
+                document.forms["form1"].action="one.html"
+               document.forms["form1"].submit()
+                return true;
+            } 
+
+        }
+
+        function do2()
+        {
+            document.forms["form1"].action="g.html"
+                document.forms["form1"].submit()
+            
+        }
+    </script>
+    <body>
+        <form name="form1" onsubmit="return validate()">
+            Student Name :<input type="text" name="studName" required />
+            <p class="errormessage">Name must be given</p>
+            <br>
+            Student Age :<input type="number" name="studAge" min="10"/>
+            <p class="errormessage">age must be more than 10</p>
+            <br>
+            <input type="button" onclick="validate()" value="Action1"> </input><br>
+            
+
+        </form>
+    </body>
+</html>
